@@ -15,7 +15,7 @@ var numbers = ['Hoàng', 'Giang', 'Sơn'];
 numbers.forEach(myFunction);
 
 function myFunction(value){
-    name = name + value + "<br>";S
+    name = name + value + "<br>";
 }
 
 //map
@@ -53,7 +53,7 @@ var a = fruits.indexOf("Apple");
 
 //last index of
 var fruits = ["Banana", "Apple", "Orange"];
-var a = fruits.indexOf("Orange");
+var a = fruits.lastIndexOf("Orange");
 
 //JSON.parse
 var obj = JSON.parse('{"Pen", "Apple", "Apple pen"}');
@@ -61,3 +61,53 @@ var obj = JSON.parse('{"Pen", "Apple", "Apple pen"}');
 //JSON.stringfy
 var obj = {name: 'Tu', age: '30', city: 'Ha Noi'};
 var myJSON = JSON.stringify(obj);
+
+//Date.now
+var count = Date.now();
+
+//Getters
+var person = {
+    firstName: "Le",
+    lastName: "Tu",
+    country: "Việt Nam",
+    get information(){
+        return this.firstName + " " + this.lastName + " " + this.country;
+    }
+};
+document.getElementById("").innerHTML = person.information;
+
+//Getters and setters
+var person = {
+    firstName: "Le",
+    lastName: "Tu",
+    language: "NO",
+    get lang() {
+        return this.language;
+    },
+    set lang(value) {
+        this.language = value;
+    }
+};
+
+person.lang = "english";
+document.getElementById("").innerHTML = person.lang;
+
+//Object.defineProperty
+var employee = {
+    id: "1",
+    Name: "Mai Quang Nam",
+    language: "Chinese",
+}
+Object.defineProperty(employee, "language", {
+    value:"EN",
+    writable: true,
+    enumerable: true,
+    configurable: true
+});
+
+var property = "";
+for(var x in employee){
+    property += property[x] + "<br/>"
+}
+document.getElementById("").innerHTML = property;
+    
